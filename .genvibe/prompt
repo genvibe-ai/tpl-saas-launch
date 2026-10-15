@@ -1,4 +1,4 @@
-This project started from the GenVibe Kairo SaaS template (Vite + React 19 + Tailwind CSS 4 + motion). Read .genvibe/memory.md before editing.
+This project started from the GenVibe Askfield SaaS template (Vite + React 19 + Tailwind CSS 4 + motion). Read .genvibe/memory.md before editing.
 When the user describes their product, first update src/content.ts: site (name, title, description), nav, hero copy, logo-strip names, features, how-it-works steps, metrics, story, testimonials, pricing, FAQ, final CTA, footer, and theme.colors for their palette. Mirror the new title and description in index.html.
 Then swap images: create new WebP files with the same names in public/images/ (hero, three features, team, three avatars), or point the `images` entries in content.ts at new files and update their alt text and width/height. Keep hero-poster.webp as the first frame of the hero video.
 Keep the design system: the section components, Tailwind tokens (bg-canvas, text-accent, border-line…), fonts, the background video + poster pattern (reduced-motion users get the poster) and the motion style. Restyle or restructure only when the user asks.

@@ -52,13 +52,13 @@ import type {
 /* ── Brand ───────────────────────────────────────────────────────── */
 
 export const site: Site = {
-  name: "Kairo",
-  legalName: "Kairo Labs, Inc.",
-  title: "Kairo — Ask your product data anything",
+  name: "Askfield",
+  legalName: "Askfield Labs, Inc.",
+  title: "Askfield — Ask your product data anything",
   description:
-    "Kairo is the AI analytics copilot for product teams. Ask questions in plain English and get the chart, the root cause and the next move in seconds.",
-  contactEmail: "hello@kairo.example",
-  logo: { src: "", alt: "Kairo" },
+    "Askfield is the AI analytics copilot for product teams. Ask questions in plain English and get the chart, the root cause and the next move in seconds.",
+  contactEmail: "hello@askfield.example",
+  logo: { src: "", alt: "Askfield" },
 };
 
 /* ── Colours (applied as CSS variables at startup) ──────────────────
@@ -90,7 +90,7 @@ export const images = {
   },
   hero: {
     src: "/images/saas-hero.webp",
-    alt: "Kairo analytics workspace with activation trends, funnels and forecast charts",
+    alt: "Askfield analytics workspace with activation trends, funnels and forecast charts",
     width: 1600,
     height: 1067,
   },
@@ -114,7 +114,7 @@ export const images = {
   },
   team: {
     src: "/images/saas-team.webp",
-    alt: "Four Kairo teammates gathered around a laptop in a sunlit studio",
+    alt: "Four Askfield teammates gathered around a laptop in a sunlit studio",
     width: 1200,
     height: 800,
   },
@@ -157,12 +157,12 @@ export const nav: Navigation = {
 export const hero: Hero = {
   badge: {
     tag: "New",
-    label: "Kairo 2.0 — forecasts that explain themselves",
+    label: "Askfield 2.0 — forecasts that explain themselves",
     href: "#features",
   },
   headline: { lead: "Ask your product data", highlight: "anything." },
   subheadline:
-    "Kairo is the AI analytics copilot for product teams. Ask in plain English and get the chart, the root cause and the next move — in seconds, not sprints.",
+    "Askfield is the AI analytics copilot for product teams. Ask in plain English and get the chart, the root cause and the next move — in seconds, not sprints.",
   primaryCta: { label: "Start free trial", href: "#pricing" },
   secondaryCta: { label: "See how it works", href: "#how-it-works" },
   trust: ["14-day free trial", "No credit card", "SOC 2 Type II"],
@@ -172,7 +172,7 @@ export const hero: Hero = {
   image: images.hero,
   statCard: { label: "Activation rate", value: "+12.4%", note: "vs. previous 30 days" },
   askCard: {
-    label: "Ask Kairo",
+    label: "Askfield AI",
     question: "Why did trial-to-paid dip in March?",
     answer: "2 root causes found · 3.8s",
   },
@@ -182,7 +182,7 @@ export const hero: Hero = {
 /* ── Logo strip (fictional wordmarks rendered as text) ───────────── */
 
 export const logoStrip: LogoStrip = {
-  title: "Product teams at 2,400+ companies ask Kairo first",
+  title: "Product teams at 2,400+ companies turn to Askfield first",
   logos: [
     { name: "Quillstack", icon: Feather, style: "display" },
     { name: "ORBITFOLD", icon: Orbit, style: "wide" },
@@ -201,7 +201,7 @@ export const features: Features = {
   eyebrow: "Product",
   title: "Everything an analyst does, in the time it takes to ask.",
   description:
-    "Kairo connects to your product data, learns your metrics and answers like your sharpest analyst — with the receipts to prove it.",
+    "Askfield connects to your product data, learns your metrics and answers like your sharpest analyst — with the receipts to prove it.",
   link: { label: "See how it works", href: "#how-it-works" },
   items: [
     {
@@ -218,7 +218,7 @@ export const features: Features = {
       icon: BellRing,
       title: "Alerts that think ahead",
       description:
-        "Kairo watches every metric overnight and flags anomalies before stand-up, with a draft explanation already attached.",
+        "Askfield watches every metric overnight and flags anomalies before stand-up, with a draft explanation already attached.",
       bullets: ["Anomaly detection on every metric", "Weekly digests, written for you", "Thresholds that learn seasonality"],
       image: images.featureAutomation,
     },
@@ -245,14 +245,14 @@ export const howItWorks: HowItWorks = {
       icon: Plug,
       title: "Connect your data",
       description:
-        "Point Kairo at your warehouse or event stream. It maps tables, events and metrics automatically — usually in under five minutes.",
+        "Point Askfield at your warehouse or event stream. It maps tables, events and metrics automatically — usually in under five minutes.",
       detail: "✓ events_prod connected · 214 tables mapped",
     },
     {
       icon: MessageSquareText,
       title: "Ask in plain English",
       description:
-        "Type a question the way you’d ask an analyst. Kairo writes the query, checks the result and shows its reasoning.",
+        "Type a question the way you’d ask an analyst. Askfield writes the query, checks the result and shows its reasoning.",
       detail: "> why did trial→paid drop in March?",
     },
     {
@@ -284,7 +284,7 @@ export const story: Story = {
   eyebrow: "Our story",
   title: "Built by analysts who were tired of being the bottleneck.",
   paragraphs: [
-    "Kairo began in 2023, when our founders — a data lead and a product manager — counted 140 ad-hoc data requests in a single quarter. Most were the same five questions, asked a little differently.",
+    "Askfield began in 2023, when our founders — a data lead and a product manager — counted 140 ad-hoc data requests in a single quarter. Most were the same five questions, asked a little differently.",
     "So we built the analyst we wished we had: one that knows your metrics, explains its reasoning and never says “I’ll get back to you next sprint.”",
   ],
   facts: [
@@ -294,7 +294,7 @@ export const story: Story = {
   ],
   cta: { label: "We’re hiring — see open roles", href: "#" },
   image: images.team,
-  caption: { title: "The Kairo team", text: "Remote-first, with hubs in Lisbon and Toronto" },
+  caption: { title: "The Askfield team", text: "Remote-first, with hubs in Lisbon and Toronto" },
 };
 
 /* ── Testimonials ────────────────────────────────────────────────── */
@@ -302,12 +302,12 @@ export const story: Story = {
 export const testimonials: Testimonials = {
   eyebrow: "Customers",
   title: "Loved by teams who hate waiting on data",
-  description: "Product, growth and data teams use Kairo to answer their own questions — and trust what they find.",
+  description: "Product, growth and data teams use Askfield to answer their own questions — and trust what they find.",
   rating: "Rated 4.9/5 by 600+ product teams",
   items: [
     {
       quote:
-        "We replaced three dashboards and a weekly metrics meeting with one Kairo thread. Our PMs finally answer their own questions.",
+        "We replaced three dashboards and a weekly metrics meeting with one Askfield thread. Our PMs finally answer their own questions.",
       name: "Maya Okafor",
       role: "Head of Product",
       company: "Quillstack",
@@ -316,7 +316,7 @@ export const testimonials: Testimonials = {
     },
     {
       quote:
-        "An anomaly alert caught a broken sign-up flow on a Saturday morning. Kairo paid for itself before Monday.",
+        "An anomaly alert caught a broken sign-up flow on a Saturday morning. Askfield paid for itself before Monday.",
       name: "Daniel Reyes",
       role: "VP Engineering",
       company: "Orbitfold",
@@ -340,7 +340,7 @@ export const testimonials: Testimonials = {
 export const pricing: Pricing = {
   eyebrow: "Pricing",
   title: "Simple pricing that scales with your questions",
-  description: "Start free. Upgrade when Kairo becomes part of every decision.",
+  description: "Start free. Upgrade when Askfield becomes part of every decision.",
   currency: "$",
   billing: {
     monthly: "Monthly",
@@ -404,28 +404,28 @@ export const faq: Faq = {
   contact: {
     title: "Still curious?",
     text: "Talk to a human — we usually reply within a few hours.",
-    cta: { label: "Email the team", href: "mailto:hello@kairo.example" },
+    cta: { label: "Email the team", href: "mailto:hello@askfield.example" },
   },
   items: [
     {
-      question: "What data sources does Kairo connect to?",
+      question: "What data sources does Askfield connect to?",
       answer:
-        "Kairo connects to every major cloud data warehouse and event-streaming pipeline, plus relational databases and CSV uploads. Most teams ask their first question within five minutes of signing up.",
+        "Askfield connects to every major cloud data warehouse and event-streaming pipeline, plus relational databases and CSV uploads. Most teams ask their first question within five minutes of signing up.",
     },
     {
-      question: "How accurate are Kairo’s answers?",
+      question: "How accurate are Askfield’s answers?",
       answer:
-        "Every answer shows the query it ran and the reasoning behind it, so you can check the work. On audited customer questions Kairo matches a senior analyst 94% of the time — and it tells you when it isn’t sure.",
+        "Every answer shows the query it ran and the reasoning behind it, so you can check the work. On audited customer questions Askfield matches a senior analyst 94% of the time — and it tells you when it isn’t sure.",
     },
     {
       question: "Is my data secure?",
       answer:
-        "Yes. Kairo is SOC 2 Type II audited, encrypts data in transit and at rest, and never trains models on your data. Scale plans add SSO, SCIM and regional data residency.",
+        "Yes. Askfield is SOC 2 Type II audited, encrypts data in transit and at rest, and never trains models on your data. Scale plans add SSO, SCIM and regional data residency.",
     },
     {
       question: "Do I need to know SQL?",
       answer:
-        "Not at all — ask in plain English. If you do speak SQL, you can open, edit and save any query Kairo writes. It’s your code, not a black box.",
+        "Not at all — ask in plain English. If you do speak SQL, you can open, edit and save any query Askfield writes. It’s your code, not a black box.",
     },
     {
       question: "Can I change plans or cancel anytime?",
@@ -492,7 +492,7 @@ export const footer: Footer = {
     { label: "Cookies", href: "#" },
   ],
   socials: [
-    { label: "Email us", href: "mailto:hello@kairo.example", icon: Mail },
+    { label: "Email us", href: "mailto:hello@askfield.example", icon: Mail },
     { label: "Community", href: "#", icon: MessagesSquare },
     { label: "Blog feed", href: "#", icon: Rss },
   ],

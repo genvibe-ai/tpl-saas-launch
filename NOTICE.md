@@ -10,4 +10,4 @@ restyled for GenVibe. The original licence text is in `LICENSE-UPSTREAM`.
 - Images in `public/images/`: generated for GenVibe.
 - Hero video: "Futuristic abstract digital flow background" from Pexels (https://www.pexels.com/video/futuristic-abstract-digital-flow-background-32399073/), Pexels License (free to use, no attribution required). Re-encoded and hosted by GenVibe at https://genvibe.pro/tpl-media/saas/hero.mp4.
 
-"Kairo" and every company, person, quote and number on the page are fictional.
+"Askfield" and every company, person, quote and number on the page are fictional.

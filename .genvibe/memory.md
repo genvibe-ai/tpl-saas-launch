@@ -1,6 +1,6 @@
-# Kairo SaaS template — project memory
+# Askfield SaaS template — project memory
 
-Premium dark landing page for a fictional AI analytics copilot ("Kairo"). Built to be rebranded:
+Premium dark landing page for a fictional AI analytics copilot ("Askfield"). Built to be rebranded:
 almost every change starts in `src/content.ts`. Stack: Vite 8, React 19, TypeScript, Tailwind CSS 4
 (@tailwindcss/vite), motion (`motion/react`), lucide-react, Fontsource fonts. No backend, no env vars.
 Commands: `yarn dev` · `yarn build` · `yarn preview` · `yarn typecheck`.
