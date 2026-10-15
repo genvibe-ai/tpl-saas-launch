@@ -10,7 +10,7 @@ export function Logo({ className }: { className?: string }) {
       ) : (
         <LogoMark className="size-8" />
       )}
-      <span className="font-display text-xl font-semibold tracking-[-0.03em] text-fg">{site.name}</span>
+      <span className="font-display text-xl leading-none font-semibold tracking-[-0.03em] text-fg">{site.name}</span>
     </span>
   );
 }

@@ -43,7 +43,8 @@ export function Navbar() {
           elevated ? "border-line bg-canvas/75 shadow-float" : "border-fg/[0.06] bg-canvas/25",
         )}
       >
-        <a href="#top" aria-label={`${site.name} — back to top`} className="shrink-0 rounded-full">
+        {/* flex, not inline: an inline link adds a text line box that pushed the logo above centre. */}
+        <a href="#top" aria-label={`${site.name} — back to top`} className="flex shrink-0 items-center rounded-full">
           <Logo />
         </a>
 
