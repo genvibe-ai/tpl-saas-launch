@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────
+ * DESIGN TOKENS
+ * Colours are NOT set here. They live in src/content.ts → theme.colors,
+ * are written to --theme-* CSS variables at startup (src/lib/theme.ts)
+ * and exposed to Tailwind below. Use the utilities:
+ *   bg-canvas  bg-surface  bg-raised   text-fg  text-muted  text-faint
+ *   bg-accent  text-accent text-accent-fg       text-secondary
+ *   border-line  border-line-strong   (opacity works: bg-accent/10)
+ * ───────────────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-canvas: var(--theme-canvas);
+  --color-surface: var(--theme-surface);
+  --color-raised: var(--theme-raised);
+  --color-fg: var(--theme-fg);
+  --color-muted: var(--theme-muted);
+  --color-faint: var(--theme-faint);
+  --color-accent: var(--theme-accent);
+  --color-accent-fg: var(--theme-accent-fg);
+  --color-secondary: var(--theme-secondary);
+  --color-line: color-mix(in oklab, var(--theme-fg) 9%, transparent);
+  --color-line-strong: color-mix(in oklab, var(--theme-fg) 16%, transparent);
+
+  /* Accent glow for primary buttons, soft drop shadow for floating cards */
+  --shadow-glow:
+    0 0 0 1px color-mix(in oklab, var(--theme-accent) 70%, black),
+    0 10px 30px -10px color-mix(in oklab, var(--theme-accent) 70%, transparent),
+    inset 0 1px 0 rgb(255 255 255 / 0.5);
+  --shadow-glow-lg:
+    0 0 0 1px color-mix(in oklab, var(--theme-accent) 70%, black),
+    0 16px 44px -10px color-mix(in oklab, var(--theme-accent) 85%, transparent),
+    inset 0 1px 0 rgb(255 255 255 / 0.5);
+  --shadow-float:
+    0 30px 70px -30px rgb(0 0 0 / 0.85),
+    0 0 0 1px color-mix(in oklab, var(--theme-fg) 7%, transparent);
+}
+
+@theme {
+  /* Fonts — packages are imported in src/main.tsx */
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 50s linear infinite;
+  --animate-blink: blink 1.1s steps(2, start) infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+}
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--theme-canvas);
+    scroll-behavior: smooth;
+    /* keeps anchor targets clear of the fixed navbar */
+    scroll-padding-top: 6rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--theme-canvas);
+    color: var(--theme-fg);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--theme-accent);
+    color: var(--theme-accent-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--theme-accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* ── Utilities ────────────────────────────────────────────────────── */
+
+/* Frosted glass panel */
+@utility glass {
+  background-color: color-mix(in oklab, var(--theme-surface) 58%, transparent);
+  border: 1px solid color-mix(in oklab, var(--theme-fg) 10%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+}
+
+/* Faint square grid; pair with a fade-* mask */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--theme-fg) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--theme-fg) 6%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Dot pattern */
+@utility bg-dots {
+  background-image: radial-gradient(color-mix(in oklab, var(--theme-fg) 16%, transparent) 1px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Film grain (very subtle texture) */
+@utility grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Masks that fade an element out towards its edges */
+@utility fade-x {
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+@utility fade-b {
+  mask-image: linear-gradient(to bottom, black 45%, transparent);
+}
+@utility fade-radial {
+  mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, black 25%, transparent 100%);
+}
+@utility fade-edges {
+  mask-image:
+    linear-gradient(to right, transparent, black 9%, black 91%, transparent),
+    linear-gradient(to bottom, transparent, black 11%, black 80%, transparent);
+  mask-composite: intersect;
+}
+
+/* Cursor-following glow for cards (see useSpotlight in src/lib/motion.ts) */
+@utility spotlight {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      26rem circle at var(--spot-x, 50%) var(--spot-y, -10%),
+      color-mix(in oklab, var(--theme-accent) 12%, transparent),
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Thin highlight along the top edge of a card (element must be positioned) */
+@utility edge-glow {
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--theme-fg) 45%, transparent), transparent);
+  }
+}
+@utility edge-glow-accent {
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, var(--theme-accent), transparent);
+  }
+}
